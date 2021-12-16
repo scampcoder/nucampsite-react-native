@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import CampsiteInfo from './CampsiteInfoComponent';
 import { View, Platform } from 'react-native';
 import { createAppContainer } from 'react-navigation';
+import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar';
 
 const DirectoryNavigator = createStackNavigator(
     {
@@ -24,30 +25,15 @@ const DirectoryNavigator = createStackNavigator(
     }
 );
 
-class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            campsites: CAMPSITES,
-            selectedCampsite: null
-        };
-    }
+const AppNavigator = createAppContainer(DirectoryNavigator); //typically wrap the top level nav w/ 'createAppContainer'
 
-    onCampsiteSelect(campsiteId) {
-        this.setState({selectedCampsite: campsiteId});
-    }
+class Main extends Component {
 
     render() {
         return (
-            <View style={{flex: 1}}>
-                <Directory
-                    campsites={this.state.campsites}
-                    onPress={campsiteId => this.onCampsiteSelect(campsiteId)}
-                />
-                <CampsiteInfo
-                    campsite={this.state.campsites.filter(
-                        campsite => campsite.id === this.state.selectedCampsite)[0]}
-                />
+            <View 
+                style={{flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight}}> {/* conditional code for screen size. If not ios OS, uses expo constant */}
+                <AppNavigator />
             </View>
         )
     }
