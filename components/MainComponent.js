@@ -32,7 +32,7 @@ class Main extends Component {
     render() {
         return (
             <View 
-                style={{flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight}}> {/* conditional code for screen size. If not ios OS, uses expo constant */}
+                style={{flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight}}> 
                 <AppNavigator />
             </View>
         )
