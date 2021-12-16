@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import CampsiteInfo from './CampsiteInfoComponent';
 import { View, Platform } from 'react-native';
 import { createAppContainer } from 'react-navigation';
-import { Constants } from 'expo-constants';
+import Constants from 'expo-constants';
 
 const DirectoryNavigator = createStackNavigator(
     {
