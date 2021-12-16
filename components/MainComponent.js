@@ -19,7 +19,7 @@ const DirectoryNavigator = createStackNavigator(
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
-                color: #fff
+                color: '#fff'
             }
         }
     }
