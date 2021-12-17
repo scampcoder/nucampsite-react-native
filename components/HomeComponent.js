@@ -5,6 +5,22 @@ import { CAMPSITES } from "../shared/campsites";
 import { PROMOTIONS } from "../shared/promotions";
 import { PARTNERS } from "../shared/partners";
 
+
+function RenderItem({item}) {
+    if(item) {
+        return (
+            <Card
+                featuredTitle={item.name}
+                image={require('./images/react-lake.jpg')}>
+                <Text style={{margin: 10}}>
+                    {item.description}
+                </Text>
+            </Card>
+        );
+    }
+    return <View />;
+}
+
 class Home extends Component {
 
     constructor(props) {
@@ -22,9 +38,9 @@ class Home extends Component {
     
     render() {
         return (
-            <View>
-                <Text>Home Component</Text>
-            </View>
+            <ScrollView>
+
+            </ScrollView>
         );
     }
     
