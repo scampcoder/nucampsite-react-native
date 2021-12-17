@@ -44,6 +44,16 @@ const HomeNavigator = createStackNavigator(
     }
 );
 
+const MainNavigator = createDrawerNavigator(
+    {
+        Home: { screen: HomeNavigator },
+        Directory: { screen: DirectoryNavigator }
+    },
+    {
+        drawerBackgroundColor: '#CEC8FF'
+    }
+)
+
 const AppNavigator = createAppContainer(DirectoryNavigator); //typically wrap the top level nav w/ 'createAppContainer'
 
 class Main extends Component {
