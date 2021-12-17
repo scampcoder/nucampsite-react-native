@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
+import Home from './HomeComponent';
 import { createStackNavigator } from 'react-navigation-stack';
 import CampsiteInfo from './CampsiteInfoComponent';
 import { View, Platform } from 'react-native';
 import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import Constants from 'expo-constants';
 
 const DirectoryNavigator = createStackNavigator(
