@@ -54,7 +54,7 @@ const MainNavigator = createDrawerNavigator(
     }
 )
 
-const AppNavigator = createAppContainer(DirectoryNavigator); //typically wrap the top level nav w/ 'createAppContainer'
+const AppNavigator = createAppContainer(MainNavigator); //typically wrap the top level nav w/ 'createAppContainer'
 
 class Main extends Component {
 
