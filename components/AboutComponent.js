@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { ScrollView, Text } from "react-native";
-import { Card } from 'react-native-elements';
+import { ScrollView, Text, FlatList } from "react-native";
+import { Card, ListItem } from 'react-native-elements';
 import { PARTNERS } from "../shared/partners";
 
 function Mission() {
     return (
-        <Card>
+        <Card title="Our Mission">
             <Text style={{margin: 10}}>
                 We present a curated database of the best campsites 
                 in the vast woods and backcountry of the World Wide Web 
@@ -45,6 +45,13 @@ class About extends Component {
         return (
             <ScrollView>
                 <Mission />
+                <Card title="Community Partners">
+                    <FlatList 
+                        data={this.state.partners} 
+                        keyExtractor={item => item.id.toString()} 
+                        renderItem={renderPartner} 
+                    />
+                </Card>
             </ScrollView>
         )
     }
