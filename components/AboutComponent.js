@@ -33,9 +33,18 @@ class About extends Component {
     }
 
     render() {
+        const renderPartner = ({item}) => {
+            return (
+                <ListItem
+                    title={item.name}
+                    subtitle={item.description}
+                    leftAvatar={{ source: require('./images/bootstrap-logo.png')}}
+                />
+            );
+        };
         return (
             <ScrollView>
-                
+                <Mission />
             </ScrollView>
         )
     }
