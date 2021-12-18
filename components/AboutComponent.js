@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, Text } from "react-native";
 import { Card } from 'react-native-elements';
+import { PARTNERS } from "../shared/partners";
 
 function Mission() {
     return (
@@ -22,6 +23,9 @@ function Mission() {
 class About extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            partners: PARTNERS
+        }
     }
 
     static navigationOptions = { 
