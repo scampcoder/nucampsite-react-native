@@ -7,6 +7,8 @@ import { View, Platform } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import Constants from 'expo-constants';
+import About from './AboutComponent';
+import Contact from './ContactComponent';
 
 const DirectoryNavigator = createStackNavigator(
     {
