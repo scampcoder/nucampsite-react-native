@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 class Directory extends Component {
 
-    static navigationOptions = { //statis is a js keyword that sets a method on the class itself rather than the object instantiated from the class
+    static navigationOptions = { //static is a js keyword that sets a method on the class itself rather than the object instantiated from the class
         title: 'Directory'
     }
 
