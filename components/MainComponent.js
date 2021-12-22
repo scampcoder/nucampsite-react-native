@@ -68,15 +68,21 @@ const AboutNavigator = createStackNavigator(
         About: { screen: About }
     },
     {
-        defaultNavigationOptions: {
+        defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
                 backgroundColor: '#5637DD'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
                 color: '#fff'
-            }
-        }
+            },
+            headerLeft: <Icon
+                        name='info-circle'
+                        type='font-awesome'
+                        iconStyle={styles.stackIcon}
+                        onPress={() => navigation.toggleDrawer}
+                    />
+        })
     }
 );
 
