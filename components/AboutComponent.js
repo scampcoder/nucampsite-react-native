@@ -39,7 +39,7 @@ class About extends Component {
                 <ListItem
                     title={item.name}
                     subtitle={item.description}
-                    leftAvatar={{ source: require('./images/bootstrap-logo.png')}}
+                    leftAvatar={{ source: {uri: baseUrl + item.image}}}
                 />
             );
         };
@@ -48,7 +48,7 @@ class About extends Component {
                 <Mission />
                 <Card title="Community Partners">
                     <FlatList 
-                        data={this.state.partners} 
+                        data={this.props.partners.partners} 
                         keyExtractor={item => item.id.toString()} 
                         renderItem={renderPartner} 
                     />
@@ -58,4 +58,4 @@ class About extends Component {
     }
 }
 
-export default About;
+export default connect(mapStateToProps)(About);
