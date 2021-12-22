@@ -4,6 +4,12 @@ import { Card, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 
+const mapStateToProps = state => {
+    return {
+        partners: state.partners
+    };
+}
+
 function Mission() {
     return (
         <Card title="Our Mission">
@@ -22,12 +28,6 @@ function Mission() {
 }
 
 class About extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            partners: PARTNERS
-        }
-    }
 
     static navigationOptions = { 
         title: 'About Us'
