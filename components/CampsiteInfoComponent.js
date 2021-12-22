@@ -21,6 +21,28 @@ function RenderCampsite({campsite}) {
     return <View />;
 }
 
+function RenderComments({comments}) {
+
+    const renderCommentItem = ({item}) => {
+        return (
+            <View style={{margin: 10}}>
+                <Text style={{font: 14}}>{item.text}</Text>
+                <Text style={{font: 12}}>{item.rating} Stars</Text>
+                <Text style={{font: 12}}>{`-- ${item.author}, ${item.date}`}</Text>
+            </View>
+        )
+    };
+    
+    return (
+        <Card title="Comments">
+            <FlatList 
+                data={comments} 
+                renderItem={renderCommentItem}
+                keyExtractor={item => item.id.toString()} />
+        </Card>
+    )
+}
+
 class CampsiteInfo extends Component {
 
     constructor(props) {
@@ -39,7 +61,12 @@ class CampsiteInfo extends Component {
         const campsiteId = this.props.navigation.getParam('campsiteId');
         const campsite = this.state.campsites.filter(campsite => campsite.id === campsiteId)[0];
         const comments = this.state.comments.filter(comment => comment.campsiteId === campsiteId);
-        return <RenderCampsite campsite={campsite} />;
+        return (
+            <ScrollView>
+                <RenderCampsite campsite={campsite} />
+                <RenderComments comments={comments} />
+            </ScrollView>
+        );
     }
 }
 
