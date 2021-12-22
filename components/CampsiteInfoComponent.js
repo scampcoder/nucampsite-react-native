@@ -4,7 +4,9 @@ import { Card, Icon } from "react-native-elements";
 import { CAMPSITES } from "../shared/campsites";
 import { COMMENTS } from "../shared/comments";
 
-function RenderCampsite({ campsite }) {
+function RenderCampsite(props) {
+  const {campsite} = props;
+
   if (campsite) {
     return (
       <Card
@@ -13,11 +15,13 @@ function RenderCampsite({ campsite }) {
       >
         <Text style={{ margin: 10 }}>{campsite.description}</Text>
         <Icon 
-            name="heart-o" 
-            type="font-awesome" 
+            name={props.favorite ? 'heart' : 'heart-o'}
+            type='font-awesome' 
             color="#f50" 
             raised 
             reverse 
+            onPress={() => props.favorite ? 
+                console.log('Already set as a favorite') : props.markFavorite()}
         />
       </Card>
     );
