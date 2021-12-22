@@ -20,7 +20,7 @@ const DirectoryNavigator = createStackNavigator(
                         name='list'
                         type='font-awesome'
                         iconStyle={styles.stackIcon}
-                        onPress={() => navigation.toggleDrawer}
+                        onPress={() => navigation.toggleDrawer()}
                     />
             })
         },
@@ -57,7 +57,7 @@ const HomeNavigator = createStackNavigator(
                         name='home'
                         type='font-awesome'
                         iconStyle={styles.stackIcon}
-                        onPress={() => navigation.toggleDrawer}
+                        onPress={() => navigation.toggleDrawer()}
                     />
         })
     }
@@ -80,7 +80,7 @@ const AboutNavigator = createStackNavigator(
                         name='info-circle'
                         type='font-awesome'
                         iconStyle={styles.stackIcon}
-                        onPress={() => navigation.toggleDrawer}
+                        onPress={() => navigation.toggleDrawer()}
                     />
         })
     }
@@ -103,7 +103,7 @@ const ContactNavigator = createStackNavigator(
                         name='address-card'
                         type='font-awesome'
                         iconStyle={styles.stackIcon}
-                        onPress={() => navigation.toggleDrawer}
+                        onPress={() => navigation.toggleDrawer()}
                     />
         })
     }
