@@ -254,4 +254,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Main;
+export default connect(null, mapDispatchToProps)(Main);
