@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
-import Home from './HomeComponent';
-import { createStackNavigator } from 'react-navigation-stack';
 import CampsiteInfo from './CampsiteInfoComponent';
+import Home from './HomeComponent';
+import About from './AboutComponent';
+import Contact from './ContactComponent';
+import { createStackNavigator } from 'react-navigation-stack';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
+import { connect } from 'react-redux';
+import { fetchCampsites, fetchComments, fetchPromotions, fetchPartners } from '../redux/ActionCreators';
 import Constants from 'expo-constants';
-import About from './AboutComponent';
-import Contact from './ContactComponent';
+
+const mapDispatchToProps = {
+    fetchCampsites,
+    fetchComments,
+    fetchPartners,
+    fetchPromotions
+};
 
 const DirectoryNavigator = createStackNavigator(
     {
