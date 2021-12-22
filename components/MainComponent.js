@@ -140,6 +140,7 @@ const MainNavigator = createDrawerNavigator(
         About: { 
             screen: AboutNavigator,
             navigationOptions: {
+                drawerLabel: 'About Us',
                 drawerIcon: ({tintColor}) => (
                     <Icon
                         name='info-circle'
@@ -153,6 +154,7 @@ const MainNavigator = createDrawerNavigator(
         Contact: { 
             screen: ContactNavigator,
             navigationOptions: {
+                drawerLabel: 'Contact Us',
                 drawerIcon: ({tintColor}) => (
                     <Icon
                         name='address-card'
