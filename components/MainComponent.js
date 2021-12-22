@@ -207,6 +207,13 @@ const MainNavigator = createDrawerNavigator(
 const AppNavigator = createAppContainer(MainNavigator); //typically wrap the top level nav w/ 'createAppContainer'
 
 class Main extends Component {
+    
+    componentDidMount() {
+        this.props.fetchCampsites();
+        this.props.fetchComments();
+        this.props.fetchPartners();
+        this.props.fetchPromotions();
+    }
 
     render() {
         return (
