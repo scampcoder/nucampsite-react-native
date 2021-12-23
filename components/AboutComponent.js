@@ -53,7 +53,7 @@ class About extends Component {
                         <Loading />
                     </Card>
                 </ScrollView>
-            )
+            );
         }
         if(this.props.partners.errMess) {
             return (
