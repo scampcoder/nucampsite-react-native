@@ -65,15 +65,9 @@ function RenderComments({ comments }) {
 }
 
 class CampsiteInfo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      favorite: false
-    };
-  }
 
-  markFavorite () {
-      this.setState({favorite: true});
+  markFavorite(campsiteId) {
+      this.props.postFavorite(campsiteId);
   }
 
   static navigationOptions = {
