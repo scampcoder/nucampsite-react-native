@@ -31,9 +31,10 @@ class Reservation extends Component {
     render() {
         return (
             <ScrollView>
-                <View>
-                    <Text>Number of Campers</Text>
+                <View style={styles.formRow}>
+                    <Text style={styles.formLabel}>Number of Campers</Text>
                     <Picker
+                        style={styles.formItem}
                         selectedValue={this.state.campers}
                         onValueChange={itemValue => this.setState({campers: itemValue})}
                     >
@@ -45,16 +46,17 @@ class Reservation extends Component {
                         <Picker.Item label='6' value='6' />
                     </Picker>
                 </View>
-                <View>
-                    <Text>Hike In?</Text>
+                <View style={styles.formRow}>
+                    <Text style={styles.formLabel}>Hike In?</Text>
                     <Switch
+                        style={styles.formItem}
                         value={this.state.hikeIn}
-                        trackColor={{true: '#5637DD', false: null}}
+                        trackColor={{true: '#5637DD', false: '#808080'}}
                         onValueChange={value => this.setState({hikeIn: value})}
                     />
                 </View>
-                <View>
-                    <Text>Date</Text>
+                <View style={styles.formRow}>
+                    <Text style={styles.formLabel}>Date</Text>
                     <Button
                         onPress={() => this.setState({showCalendar: !this.state.showCalendar})}
                         title={this.state.date.toLocaleDateString('en-US')}
@@ -70,9 +72,10 @@ class Reservation extends Component {
                         onChange={(event, selectedDate) => {
                             selectedDate && this.setState({date: selectedDate, showCalendar: false})
                         }}
+                        style={styles.formItem}
                     />
                 )}
-                <View>
+                <View style={styles.formRow}>
                     <Button
                         onPress={() => this.handleReservation()}
                         title='Search'
