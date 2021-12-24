@@ -8,9 +8,14 @@ import { postFavorite } from "../redux/ActionCreators";
 const mapStateToProps = state => {
     return {
         campsites: state.campsites,
-        comments: state.comments
+        comments: state.comments,
+        favorites: state.favorites
     };
-}
+};
+
+const mapDispatchToProps = {
+  postFavorite: campsiteId => (postFavorite(campsiteId))
+};
 
 function RenderCampsite(props) {
   const {campsite} = props;
