@@ -84,11 +84,15 @@ class CampsiteInfo extends Component {
     );
     return (
       <ScrollView>
-        <RenderCampsite campsite={campsite} favorite={this.state.favorite} markFavorite={() => this.markFavorite()} />
+        <RenderCampsite 
+          campsite={campsite} 
+          favorite={this.props.favorites.includes(campsiteId)} 
+          markFavorite={() => this.markFavorite(campsiteId)} 
+        />
         <RenderComments comments={comments} />
       </ScrollView>
     );
   }
 }
 
-export default connect(mapStateToProps)(CampsiteInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(CampsiteInfo);
