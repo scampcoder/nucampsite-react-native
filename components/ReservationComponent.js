@@ -4,3 +4,15 @@ import { Text, View, ScrollView, StyleSheet,
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 
+class Reservation extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            campers: 1,
+            hikeIn: false,
+            date: new Date()
+        };
+    }
+}
+
+export default Reservation;
