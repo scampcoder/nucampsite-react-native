@@ -26,6 +26,9 @@ class Reservation extends Component {
 
     handleReservation() {
         console.log(JSON.stringify(this.state));
+    }
+
+    resetForm() {
         this.setState({
             campers: 1,
             hikeIn: false,
