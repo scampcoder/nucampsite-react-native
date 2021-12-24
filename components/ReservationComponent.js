@@ -13,6 +13,19 @@ class Reservation extends Component {
             date: new Date()
         };
     }
+
+    static navigationOptions = {
+        title: 'Reserve Campsite'
+    }
+
+    handleReservation() {
+        console.log(JSON.stringify(this.state));
+        this.setState({
+            campsers: 1,
+            hikeIn: false,
+            date: new Date()
+        });
+    }
 }
 
 export default Reservation;
