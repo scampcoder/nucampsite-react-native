@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, StyleSheet,
-    Picker, Switch, Button } from 'react-native';
+    Picker, Switch, Button, Modal } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 
@@ -10,7 +10,9 @@ class Reservation extends Component {
         this.state = {
             campers: 1,
             hikeIn: false,
-            date: new Date()
+            date: new Date(),
+            showCalendar: false,
+            showModal: false
         };
     }
 
