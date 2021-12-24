@@ -4,6 +4,7 @@ import CampsiteInfo from './CampsiteInfoComponent';
 import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
+import Reservation from './ReservationComponent';
 import { createStackNavigator } from 'react-navigation-stack';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { createAppContainer } from 'react-navigation';
