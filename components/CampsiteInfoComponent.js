@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Text, View, ScrollView, FlatList, Modal, StyleSheet, Button } from "react-native";
-import { Card, Icon, Rating } from "react-native-elements";
+import { Card, Icon, Rating, Input } from "react-native-elements";
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 import { postFavorite } from "../redux/ActionCreators";
@@ -134,11 +134,46 @@ class CampsiteInfo extends Component {
           onRequestClose={() => this.toggleModal()}
         >
           <View style={styles.modal}>
+            <Rating 
+              showRating
+              startingValue={this.state.rating}
+              imageSize={40}
+              onFinishRating={rating => this.setState({rating: rating})} 
+              style={{paddingVertical: 10}}
+            />
+            <Input 
+              placeholder="Author"
+              leftIcon={{ type: 'font-awesome', name: 'user-o' }}
+              leftIconContainerStyle={{paddingRight: 10}}
+              onChangeText={author => this.setState({author: author})}
+              value={this.state.author}
+            />
+            <Input 
+              placeholder="Comment"
+              leftIcon={{ type: 'font-awesome', name: 'comment-o' }}
+              leftIconContainerStyle={{paddingRight: 10}}
+              onChangeText={text => this.setState({text: text})}
+              value={this.state.text}
+            />
+            <Button />
+            <View>
+              <Button 
+                title="Submit"
+                color='#5637DD'
+                onPress={() => {
+                          this.handleComment(campsiteId);
+                          this.resetForm();
+                      }}
+              />
+            </View>
               <View style={{margin: 10}}>
                 <Button 
-                  onPress={() => props.onShowModal()} 
+                  onPress={() => {
+                    props.onShowModal();
+                    this.resetForm();
+                    }} 
                   color='#808080'
-                  title='Cancel'
+                  title="Cancel"
                 />
               </View>
           </View>
