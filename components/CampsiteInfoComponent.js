@@ -111,6 +111,22 @@ class CampsiteInfo extends Component {
           onShowModal={() => this.toggleModal()}
         />
         <RenderComments comments={comments} />
+        <Modal
+          animationType={'slide'}
+          transparent={false}
+          visible={this.state.showModal}
+          onRequestClose={() => this.toggleModal()}
+        >
+          <View style={styles.modal}>
+              <View>
+                <Button 
+                  onPress={() => props.onShowModal()} 
+                  color='#808080'
+                  title='Cancel'
+                />
+              </View>
+          </View>
+        </Modal>
       </ScrollView>
     );
   }
