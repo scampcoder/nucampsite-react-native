@@ -58,7 +58,7 @@ function RenderComments({ comments }) {
       <View style={{ margin: 10 }}>
         <Text style={{ font: 14 }}>{item.text}</Text>
         <Rating 
-          startingValue={this.state.rating}
+          startingValue={item.rating}
           imageSize={10}
           style={{alignItems: 'flex-start', paddingVertical: '5%'}}
           readonly
@@ -160,8 +160,7 @@ class CampsiteInfo extends Component {
               onChangeText={text => this.setState({text: text})}
               value={this.state.text}
             />
-            <Button />
-            <View>
+            <View style={{margin: 10}}>
               <Button 
                 title="Submit"
                 color='#5637DD'
