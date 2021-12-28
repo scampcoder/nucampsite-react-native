@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
+import { exp } from 'react-native-reanimated';
 
 export const fetchComments = () => dispatch => {
     return fetch(baseUrl + 'comments')
@@ -43,6 +44,11 @@ export const postComment = (campsiteId, rating, author, text) => dispatch => {
         dispatch(addComment(newComment));
     }, 2000);
 };
+
+export const addComment = comment => ({
+    type: ActionTypes.ADD_COMMENT,
+    payload: comment
+});
 
 export const fetchCampsites = () => dispatch => {
 
