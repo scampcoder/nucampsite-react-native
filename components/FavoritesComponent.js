@@ -13,7 +13,22 @@ const mapStateToProps = state => {
 }
 
 class Favorites extends Component {
-   
+    static navigationOptions = {
+        title: 'My Favorites'
+    }
+
+    render() {
+        if(this.props.campsites.isLoading) {
+            return <Loading />;
+        }
+        if(this.props.campsites.errMess) {
+            return (
+                <View>
+                    <Text>{this.props.campsites.errMess}</Text>
+                </View>
+            )
+        }
+    }
 }
 
 export default connect(mapStateToProps)(Favorites);
