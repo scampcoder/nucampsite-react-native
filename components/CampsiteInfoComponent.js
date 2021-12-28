@@ -108,6 +108,7 @@ class CampsiteInfo extends Component {
           campsite={campsite} 
           favorite={this.props.favorites.includes(campsiteId)} 
           markFavorite={() => this.markFavorite(campsiteId)} 
+          onShowModal={() => this.toggleModal()}
         />
         <RenderComments comments={comments} />
       </ScrollView>
