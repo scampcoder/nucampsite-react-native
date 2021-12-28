@@ -173,7 +173,7 @@ class CampsiteInfo extends Component {
               <View style={{margin: 10}}>
                 <Button 
                   onPress={() => {
-                    props.onShowModal();
+                    this.onShowModal();
                     this.resetForm();
                     }} 
                   color='#808080'
