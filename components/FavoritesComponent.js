@@ -26,8 +26,15 @@ class Favorites extends Component {
                 <View>
                     <Text>{this.props.campsites.errMess}</Text>
                 </View>
-            )
+            );
         }
+        return (
+            <FlatList
+                data={this.props.campsites.campsites.filter(campsite => this.props.favorites.includes(campsite.id))}
+                renderItem={renderFavoriteItem}
+                keyExtractor={item => item.id.toString()}
+            />
+        )
     }
 }
 
