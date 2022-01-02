@@ -69,4 +69,25 @@ class Favorites extends Component {
     }
 }
 
+const styles = StyleSheet.create({
+    deleteView: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        flex: 1
+    },
+    deleteTouchable: {
+        backgroundColor: 'red',
+        height: '100%',
+        justifyContent: 'center'
+    },
+    deleteText: {
+        color: 'white',
+        fontWeight: '700',
+        textAlign: 'center',
+        fontSize: 16,
+        width: 100
+    }
+});
+
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
