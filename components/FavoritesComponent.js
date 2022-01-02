@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { FlatList, View, Text } from 'react-native';
+import { FlatList, View, Text, StyleSheet } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { SwipeRow } from 'react-native-swipe-list-view';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { deleteFavorite } from '../redux/ActionCreators'
 
 const mapStateToProps = state => {
     return {
