@@ -28,12 +28,24 @@ class Favorites extends Component {
         const { navigate } = this.props.navigation;
         const renderFavoriteItem = ({item}) => {
             return (
-                <ListItem
-                    title={item.name}
-                    subtitle={item.description}
-                    leftAvatar={{source: {uri: baseUrl + item.image}}}
-                    onPress={() => navigate('CampsiteInfo', {campsiteId: item.id})}
-                />
+                <SwipeRow rightOpenValue={-100} style={styles.swipeRow}>
+                    <View style={styles.deleteView}>
+                        <TouchableOpacity
+                            style={styles.deleteTouchable}
+                            onPress={() => this.props.deleteFavorite(item.id)}
+                        >
+                            <Text style={styles.deleteText}>Delete</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <ListItem
+                            title={item.name}
+                            subtitle={item.description}
+                            leftAvatar={{source: {uri: baseUrl + item.image}}}
+                            onPress={() => navigate('CampsiteInfo', {campsiteId: item.id})}
+                        />
+                    </View>
+                </SwipeRow>
             )
         }
 
