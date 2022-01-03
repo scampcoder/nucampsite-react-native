@@ -68,7 +68,7 @@ class Home extends Component {
     
     render() {
         return (
-            <ScrollView>
+            <Animated.ScrollView>
                 <RenderItem 
                     item={this.props.campsites.campsites.filter(campsite => campsite.featured)[0]}
                     isLoading={this.props.campsites.isLoading}
@@ -84,7 +84,7 @@ class Home extends Component {
                     isLoading={this.props.partners.isLoading}
                     errMess={this.props.partners.errMess} 
                 />
-            </ScrollView>
+            </Animated.ScrollView>
         );
     }
     
