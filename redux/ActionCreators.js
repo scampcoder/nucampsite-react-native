@@ -1,6 +1,5 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
-import { exp } from 'react-native-reanimated';
 
 export const fetchComments = () => dispatch => {
     return fetch(baseUrl + 'comments')

@@ -1,5 +1,3 @@
-import { exp } from "react-native-reanimated";
-
 export const CAMPSITES_LOADING = 'CAMPSITES_LOADING';
 export const ADD_CAMPSITES = 'ADD_CAMPSITES';
 export const CAMPSITES_FAILED = 'CAMPSITES_FAILED';
