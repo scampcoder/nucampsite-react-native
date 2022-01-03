@@ -22,6 +22,8 @@ const mapDispatchToProps = {
 function RenderCampsite(props) {
   const {campsite} = props;
 
+  const view = React.createRef();
+
   //dx is the distance of a gesture across the x axis
   const recognizeDrag = ({dx}) => (dx < -200) ? true : false;
 
@@ -57,6 +59,7 @@ function RenderCampsite(props) {
         animation='fadeInDown' 
         duration={2000} 
         delay={1000}
+        ref={view}
         {...panResponder.panHandlers}
       >
         <Card
