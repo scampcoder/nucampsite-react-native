@@ -58,6 +58,10 @@ class Home extends Component {
         ).start();
     }
 
+    componentDidMount() {
+        this.animate();
+    }
+
     static navigationOptions = {
         title: 'Home'
     } 
