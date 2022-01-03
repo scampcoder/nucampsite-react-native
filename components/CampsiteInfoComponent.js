@@ -29,6 +29,10 @@ function RenderCampsite(props) {
 
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
+    onPanResponderGrant: () => {
+      view.current.rubberBand(1000)
+      .then(endState => console.log(endState.finished ? 'finished' : 'canceled'));
+    },
     onPanResponderEnd: (e, gestureState) => {
       console.log('pan responder end', gestureState);
       if(recognizeDrag(gestureState)) {
