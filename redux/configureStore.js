@@ -9,6 +9,12 @@ import { favorites } from './favorites';
 import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
 
+const config = {
+    key: 'root',
+    storage,
+    debug: true
+}
+
 export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
