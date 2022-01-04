@@ -21,6 +21,21 @@ class Reservation extends Component {
 
     handleReservation() {
         console.log(JSON.stringify(this.state));
+        Alert.alert(
+            'Begin Search?',
+            `Number of Campers: ${this.state.campers}\n\nHike-In? ${this.state.hikeIn}\n\nDate: ${this.state.date.toLocaleDateString('en-US')}`,
+            [
+                {
+                    text:'Cancel',
+                    style: 'cancel',
+                    onPress: () => this.resetForm()
+                },
+                {
+                    text: 'OK',
+                    onPress: () => this.resetForm()
+                }
+            ]
+        )
     }
 
     resetForm() {
