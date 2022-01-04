@@ -53,9 +53,14 @@ function RenderCampsite(props) {
           {cancelable: false}
         );
       }
+      else if(recognizeComment(gestureState)) {
+        props.onShowModal();
+      }
       return true;
     }
   });
+
+  const recognizeComment = ({dx}) => (dx > 200) ? true : false;
 
   if (campsite) {
     return (
