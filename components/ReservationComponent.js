@@ -64,7 +64,7 @@ class Reservation extends Component {
                 })
             });
 
-            Notifications.scheduleNotificationsAsync({
+            Notifications.scheduleNotificationAsync({
                 content: {
                     title: 'Your Campsite Reservation Search',
                     body: `Search for ${date} requested`
