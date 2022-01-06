@@ -3,6 +3,7 @@ import { Text, View, ScrollView, StyleSheet,
     Picker, Switch, Button, Alert } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import * as Animatable from 'react-native-animatable';
+import * as Notifications from 'expo-notifications';
 
 class Reservation extends Component {
     constructor(props) {
