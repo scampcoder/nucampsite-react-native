@@ -30,6 +30,20 @@ class Login extends Component {
         }
     }
 
+    componentDidMount() {
+        //if this promise is resolved, it will return the value associated with the 'userinfo' key
+        SecureStore.getItemAsync('userinfo')
+            .then(userdata => {
+                //JSON string (userdata) with username and password needs to be changed back to a JS object using parse
+                const userinfo = JSON.parse(userdata);
+                if(userinfo) {
+                    this.setState({username: userinfo.username});
+                    this.setState({password: userinfo.password});
+                    this.setState({remember: true})
+                }
+            })
+    }
+
     //login form
     render() {
         return (
