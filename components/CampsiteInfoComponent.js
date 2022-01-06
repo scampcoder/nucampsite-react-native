@@ -95,12 +95,20 @@ function RenderCampsite(props) {
                     console.log('Already set as a favorite') : props.markFavorite()}
             />
             <Icon
-              name="pencil"
+              name={"pencil"}
               type="font-awesome"
               color='#5637DD'
               raised
               reverse
               onPress={() => props.onShowModal()}
+            />
+            <Icon 
+              name={"share"}
+              type="font-awesome"
+              color='#5637DD'
+              raised
+              reverse
+              onPress={() => shareCampsite(campsite.name, campsite.description, baseUrl + campsite.image)}
             />
           </View>
         </Card>
