@@ -86,7 +86,15 @@ class LoginTab extends Component {
                     <Button
                         onPress={() => this.handleLogin()}
                         title='Login'
-                        color='#5637DD'
+                        icon={
+                            <Icon
+                                name='sign-in'
+                                type='font-awesome'
+                                color='#fff'
+                                iconStyle={{marginRight: 10}}
+                            />
+                        }
+                        buttonStyle= {{backgroundColor: '#5637DD'}}
                     />
                 </View>
             </View>
