@@ -47,6 +47,33 @@ class Reservation extends Component {
         });
     }
 
+    async presentLocalNotification(date) {
+        function sendNotification() {
+            //override default of no alerts when app in foreground
+            Notifications.setNotificationHandler({
+                handleNotification: async () => ({
+                    shouldShowAlert: true
+                })
+            });
+
+            Notifications.scheduleNotificationsAsync({
+                content: {
+                    title: 'Your Campsite Reservation Search',
+                    body: `Search for ${date} requested`
+                },
+                //cause the notification to fire immediately
+                trigger: null
+            });
+        }
+        let permissions = await Notifications.getPermissionsAsync();
+        if(!permissions.granted) {
+            permissions = await Notifications.requestPermissionsAsync();
+        }
+        if(permissions.granted) {
+            sendNotification();
+        }
+    }
+
     render() {
         return (
             <ScrollView>
