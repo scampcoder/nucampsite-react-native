@@ -313,6 +313,8 @@ const MainNavigator = createDrawerNavigator(
         }
     },
     {
+        //explicitly sets Home pg as the initial screen
+        initialRouteName: 'Home',
         drawerBackgroundColor: '#CEC8FF',
         contentComponent: CustomDrawerContentComponent
     }
