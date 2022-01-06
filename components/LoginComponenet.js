@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Button, StyleSheet } from 'react-native';
-import { Input, Checkbox } from 'react-native-elements';
+import { Input, CheckBox } from 'react-native-elements';
 import * as SecureStore from 'expo-secure-store';
 
 class Login extends Component {
@@ -48,7 +48,7 @@ class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Input 
+                <Input
                     placeholder='Username'
                     leftIcon={{type: 'font-awesome', name: 'user-o'}}
                     onChangeText={username => this.setState({username})}
@@ -56,7 +56,7 @@ class Login extends Component {
                     containerStyle={styles.formInput}
                     leftIconContainerStyle={styles.formIcon}
                 />
-                <Input 
+                <Input
                     placeholder='Password'
                     leftIcon={{type: 'font-awesome', name: 'key'}}
                     onChangeText={password => this.setState({password})}
@@ -64,7 +64,7 @@ class Login extends Component {
                     containerStyle={styles.formInput}
                     leftIconContainerStyle={styles.formIcon}
                 />
-                <Checkbox
+                <CheckBox
                     title='Remember Me'
                     center
                     checked={this.state.remember}
