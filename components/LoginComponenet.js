@@ -19,6 +19,15 @@ class Login extends Component {
 
     handleLogin() {
         console.log(JSON.stringify(this.state));
+        if(this.state.remember) {
+            SecureStore.setItemAsync('userinfo', JSON.stringify(
+                {username: this.state.username, password: this.state.password}))
+                //.setItemAsync is a promise so we need a catch for if there is an error
+                .catch(error => console.log('Could not save user info', error));
+        } else {
+            SecureStore.deleteItemAsync('userinfo')
+                .catch(error => console.log('Could not delete user info', error));
+        }
     }
 
     //login form
