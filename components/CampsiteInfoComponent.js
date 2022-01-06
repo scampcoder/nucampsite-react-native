@@ -59,8 +59,16 @@ function RenderCampsite(props) {
       return true;
     }
   });
-
+  //for recognizing the gesture to ask for the comment box
   const recognizeComment = ({dx}) => (dx > 200) ? true : false;
+
+  const shareCampsite = (title, message, url) => {
+      Share.share({
+        title,
+        message: `${title}: ${message} ${url}`,
+        url
+      });
+  };
 
   if (campsite) {
     return (
