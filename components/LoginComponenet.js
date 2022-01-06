@@ -141,6 +141,22 @@ class RegisterTab extends Component {
     }
 }
 
+const Login = createBottomTabNavigator(
+    {
+        Login: LoginTab,
+        Register: RegisterTab
+    },
+    {
+        tabBarOptions: {
+            activeBackgroundColor: '#5637DD',
+            inactiveBackgroundColor: '#CEC8FF',
+            activeTintColor: '#fff',
+            inactiveTintColor: '#808080',
+            labelStyle: {fontSize: 16}
+        }
+    }
+);
+
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
