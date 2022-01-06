@@ -28,13 +28,20 @@ class Reservation extends Component {
                 {
                     text:'Cancel',
                     style: 'cancel',
-                    onPress: () => this.resetForm()
+                    onPress: () => {
+                        console.log('Reservation Search Canceled')
+                        this.resetForm();
+                    }
                 },
                 {
                     text: 'OK',
-                    onPress: () => this.resetForm()
+                    onPress: () => {
+                        this.presentLocalNotification(this.state.date.toLocaleDateString('en-US'));
+                        this.resetForm();
+                    }
                 }
-            ]
+            ],
+            { cancelable: false }
         )
     }
 
