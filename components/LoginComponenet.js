@@ -13,7 +13,14 @@ class Login extends Component {
         };
     }
 
-    
+    static navigationOptions = {
+        title: 'Login'
+    }
+
+    handleLogin() {
+        console.log(JSON.stringify(this.state));
+    }
+
 }
 
 export default Login;
