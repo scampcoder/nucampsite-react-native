@@ -97,6 +97,23 @@ class LoginTab extends Component {
                         buttonStyle= {{backgroundColor: '#5637DD'}}
                     />
                 </View>
+                <View style={styles.formButton}>
+                    <Button
+                        onPress={() => this.props.navigation.navigate()}
+                        title='Register'
+                        type='clear'//makes this a transparent btn w/ no bckground color
+
+                        icon={
+                            <Icon
+                                name='user-plus'
+                                type='font-awesome'
+                                color='blue'
+                                iconStyle={{marginRight: 10}}
+                            />
+                        }
+                       titleStyle= {{color: 'blue'}}
+                    />
+                </View>
             </View>
         );
     }
