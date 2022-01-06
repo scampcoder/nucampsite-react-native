@@ -19,13 +19,13 @@ class LoginTab extends Component {
 
     static navigationOptions = {
         title: 'Login',
-        tabBarIcon: ({tintColor}) => {
+        tabBarIcon: ({tintColor}) => (
             <Icon 
                 name='sign-in'
                 type='font-awesome'
                 iconStyle={{color: tintColor}}
             />
-        }
+        )
     }
 
     handleLogin() {
@@ -118,6 +118,27 @@ class LoginTab extends Component {
         );
     }
 
+}
+
+class RegisterTab extends Component {
+    static navigationOptions = {
+        title: 'Regisrer',
+        tabBarIcon: ({tintColor}) => (
+            <Icon 
+                name='user-plus'
+                type='font-awesome'
+                iconStyle={{color: tintColor}}
+            />
+        )
+    }
+
+    render() {
+        return (
+            <ScrollView>
+
+            </ScrollView>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
