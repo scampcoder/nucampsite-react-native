@@ -161,6 +161,17 @@ class RegisterTab extends Component {
         return (
             <ScrollView>
                 <View style={styles.container}>
+                    <View style={styles.imageContainer}>
+                        <Image
+                            source={{uri: this.state.imageUrl}}
+                            loadingIndicatorSource={require('./images/logo.png')}
+                            style={styles.image}
+                        />
+                        <Button
+                            title='Camera'
+                            onPress={this.getImageFromCamera}
+                        />
+                    </View>
                     <Input
                         placeholder='Username'
                         leftIcon={{type: 'font-awesome', name: 'user-o'}}
