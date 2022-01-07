@@ -134,7 +134,7 @@ class RegisterTab extends Component {
         };
     }
     static navigationOptions = {
-        title: 'Regisrer',
+        title: 'Register',
         tabBarIcon: ({tintColor}) => (
             <Icon 
                 name='user-plus'
