@@ -330,6 +330,13 @@ class Main extends Component {
         this.props.fetchComments();
         this.props.fetchPartners();
         this.props.fetchPromotions();
+
+        //the fetch returns a promise that will resolve to a NetInfo state object
+        NetInfo.fetch().then(connectionInfo => {
+            (Platform.OS === 'ios')
+                ? Alert.alert('Initial Network Connectivity Type:', connectionInfo)
+                : ToastAndroid.show('Initial Network Connectivity Type:' + connectionInfo.type, ToastAndroid.LONG);
+        });
     }
 
     render() {
