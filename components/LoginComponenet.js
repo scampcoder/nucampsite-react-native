@@ -273,6 +273,17 @@ const styles = StyleSheet.create({
     },
     formButton: {
         margin: 40
+    },
+    imageContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+        margin: 10
+    },
+    image: {
+        width: 60,
+        height: 60
     }
 });
 
