@@ -337,7 +337,7 @@ class Main extends Component {
                 ? Alert.alert('Initial Network Connectivity Type:', connectionInfo)
                 : ToastAndroid.show('Initial Network Connectivity Type:' + connectionInfo.type, ToastAndroid.LONG);
         });
-
+        //NetInfo.addEventListener returns a function to unsubscribe from network changes
         this.unsubscribeNetInfo = NetInfo.addEventListener(connectionInfo => {
             this.handleConnectivityChange(connectionInfo);
         });
