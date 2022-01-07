@@ -121,6 +121,18 @@ class LoginTab extends Component {
 }
 
 class RegisterTab extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+            firstname: '',
+            lastname: '',
+            email: '',
+            remember: false,
+            imageUrl: baseUrl + 'images/logo.png'
+        };
+    }
     static navigationOptions = {
         title: 'Regisrer',
         tabBarIcon: ({tintColor}) => (
